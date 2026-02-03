@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="font-display text-3xl font-bold text-gradient mb-4">AITANIC</h3>
             <p className="text-muted-foreground mb-6 max-w-md">
-              The flagship technical fest of the Department of AI & Data Science. 
+              The flagship technical fest of the Department of Computer Science, St Berchmans College. 
               Where innovation meets technology, and ideas transform into reality.
             </p>
             {/* Social Links */}
@@ -90,7 +90,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© {currentYear} AITANIC. Department of AI & Data Science. All rights reserved.</p>
+          <p>© {currentYear} AITANIC. Department of Computer Science, St Berchmans College. All rights reserved.</p>
           <p>
             Made with <span className="text-primary">♥</span> by the AITANIC Team
           </p>
