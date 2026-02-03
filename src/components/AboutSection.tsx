@@ -43,9 +43,9 @@ const AboutSection = () => {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             <span className="text-foreground font-semibold">AITANIC</span> is the flagship technical fest 
-            organized by the Department of Artificial Intelligence & Data Science. This event serves as a 
+            organized by the Department of Computer Science at St Berchmans College. This event serves as a 
             dynamic platform where students showcase their technical prowess, innovative ideas, and creative 
-            solutions to real-world problems. From intense coding battles to thought-provoking hackathons, 
+            solutions to real-world problems. From AI-powered ideathons to frontend design competitions, 
             AITANIC brings together the brightest minds to compete, learn, and network with industry leaders.
           </p>
         </div>

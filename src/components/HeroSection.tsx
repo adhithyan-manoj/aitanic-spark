@@ -24,7 +24,7 @@ const HeroSection = () => {
         {/* College Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8 animate-fade-in">
           <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm text-muted-foreground">Department of AI & Data Science</span>
+          <span className="text-sm text-muted-foreground">Department of Computer Science</span>
         </div>
 
         {/* Main Title */}
@@ -41,12 +41,12 @@ const HeroSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-10 text-muted-foreground animate-fade-in" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-primary" />
-            <span>March 2026</span>
+            <span>6 February 2026</span>
           </div>
           <div className="hidden md:block w-1 h-1 rounded-full bg-primary" />
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5 text-primary" />
-            <span>Tech University Campus</span>
+            <span>St Berchmans College</span>
           </div>
         </div>
 

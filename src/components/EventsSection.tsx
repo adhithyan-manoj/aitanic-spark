@@ -1,30 +1,24 @@
 import { Button } from "@/components/ui/button";
-import { Code, Gamepad2, Brain, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import sprintAiImage from "@/assets/event-sprint-ai.jpg";
+import webXcelerateImage from "@/assets/event-webxcelerate.jpg";
 
 const events = [
   {
-    icon: Code,
-    title: "Code Sprint",
-    category: "Technical",
-    description: "A high-intensity competitive programming challenge where participants solve algorithmic problems under time pressure. Test your coding skills and compete against the best programmers.",
-    highlights: ["3-hour duration", "Multiple rounds", "Cash prizes"],
-    color: "primary",
+    image: sprintAiImage,
+    title: "Sprint AI",
+    category: "AI-Powered Ideathon",
+    description: "An AI-powered ideathon by the Dept. of Computer Science, St. Berchmans College. Teams of 1-4 tackle niche problems, present innovative solutions, and optionally build an MVP prototype.",
+    prize: "₹10,000",
+    date: "6 February 2026",
   },
   {
-    icon: Brain,
-    title: "AI Hackathon",
-    category: "Innovation",
-    description: "Build innovative AI-powered solutions to solve real-world problems. Form teams, brainstorm ideas, and develop working prototypes within 24 hours.",
-    highlights: ["24-hour event", "Team of 4", "Mentorship available"],
-    color: "secondary",
-  },
-  {
-    icon: Gamepad2,
-    title: "Tech Quiz",
-    category: "Fun Event",
-    description: "Put your tech knowledge to the test in this exciting quiz competition. From general tech trivia to specific domain questions, prove you're the ultimate tech enthusiast.",
-    highlights: ["Multiple rounds", "Solo participation", "Exciting prizes"],
-    color: "primary",
+    image: webXcelerateImage,
+    title: "WebXcelerate AI",
+    category: "AI Frontend Designing",
+    description: "Showcase your frontend design skills powered by AI tools. Create stunning, responsive web interfaces and compete for exciting prizes.",
+    prize: "₹10,000",
+    date: "6 February 2026",
   },
 ];
 
@@ -49,64 +43,59 @@ const EventsSection = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-6" />
         </div>
 
-        {/* Event Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Event Cards - Image Based */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {events.map((event, index) => (
             <div
               key={event.title}
-              className="group relative rounded-2xl overflow-hidden"
+              className="group relative rounded-2xl overflow-hidden bg-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Card Background */}
-              <div className="absolute inset-0 bg-card-gradient" />
-              <div className={`absolute inset-0 bg-gradient-to-br ${event.color === 'primary' ? 'from-primary/5 to-transparent' : 'from-secondary/5 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              {/* Border Glow */}
-              <div className="absolute inset-0 rounded-2xl border border-border/50 group-hover:border-primary/50 transition-colors duration-300" />
-              
-              {/* Content */}
-              <div className="relative z-10 p-8">
-                {/* Category Badge */}
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-6 ${event.color === 'primary' ? 'bg-primary/20 text-primary' : 'bg-secondary/20 text-secondary'}`}>
-                  {event.category}
-                </span>
+              {/* Event Poster Image */}
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <img 
+                  src={event.image} 
+                  alt={event.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                
+                {/* Content Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  {/* Prize Badge */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 mb-4">
+                    <span className="text-primary font-display font-bold">Prize Pool: {event.prize}</span>
+                  </div>
+                  
+                  {/* Date */}
+                  <div className="text-sm text-muted-foreground mb-2">{event.date}</div>
+                  
+                  {/* Title */}
+                  <h3 className="font-display text-2xl font-bold text-foreground mb-2">
+                    {event.title}
+                  </h3>
+                  
+                  {/* Category */}
+                  <p className="text-primary font-medium mb-4">{event.category}</p>
 
-                {/* Icon */}
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${event.color === 'primary' ? 'bg-primary/10 group-hover:shadow-[0_0_30px_hsl(185_100%_50%/0.3)]' : 'bg-secondary/10 group-hover:shadow-[0_0_30px_hsl(280_100%_60%/0.3)]'}`}>
-                  <event.icon className={`w-8 h-8 ${event.color === 'primary' ? 'text-primary' : 'text-secondary'}`} />
+                  {/* Register Button */}
+                  <Button 
+                    variant="neon" 
+                    className="w-full group/btn"
+                  >
+                    Register Now
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
-
-                {/* Title */}
-                <h3 className="font-display text-2xl font-bold mb-4 text-foreground">
-                  {event.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {event.description}
-                </p>
-
-                {/* Highlights */}
-                <ul className="space-y-2 mb-8">
-                  {event.highlights.map((highlight) => (
-                    <li key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className={`w-1.5 h-1.5 rounded-full ${event.color === 'primary' ? 'bg-primary' : 'bg-secondary'}`} />
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Register Button */}
-                <Button 
-                  variant={event.color === 'primary' ? 'neon' : 'neon-magenta'} 
-                  className="w-full group/btn"
-                >
-                  Register Now
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* More Events Coming Soon */}
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground">More events coming soon...</p>
         </div>
       </div>
     </section>
